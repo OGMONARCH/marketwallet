@@ -1,0 +1,36 @@
+img{
+    height: 100%;
+    margin-left: 1rem;
+}
+
+header{
+    display: flex;
+    background: black;
+    height: 3rem;
+    width: 60%;
+    align-items: center;
+    margin: 1rem;
+    padding: 20px;
+    border: 1px solid #adff2f;
+    border-radius: 20px;
+}
+
+.nav-section ul{
+    display: flex;
+}
+
+.nav-section ul li{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    height: 5rem;
+    margin: 1rem;
+    align-items: center;
+    color: #fff;
+    font-weight: 500;
+    align-items: center;
+}
+
+.nav-section ul li a{
+    text-decoration: none;
+}
