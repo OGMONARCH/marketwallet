@@ -9,6 +9,7 @@ function Transfer() {
     e.preventDefault();
 
     try {
+      //they should be able to send mmoney to other users
       const response = await axios.post('/api/transfer', {
         amount,
         accountNumber,

@@ -4,7 +4,7 @@ import './Style/general.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './component/Navbar';
 import Home from './component/Home';
-import Refer from './component/Refer';
+// import Refer from './component/Refer';
 import Transfer from './component/Transfer';
 import TransactionHistory from './component/TransactionHistory';
 // import Login from './component/Login';
@@ -18,7 +18,7 @@ function App() {
         <Home />
         <Routes>
           <Route path="/" element={<Navbar />} />
-          <Route path="/refer" element={<Refer />} />
+          {/* <Route path="/refer" element={<Refer />} /> */}
           <Route path="/transfer" element={<Transfer />} />
           <Route path="/transaction-history" element={<TransactionHistory />} />
           {/* <Route path="/login" element={<Login />} />
