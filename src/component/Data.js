@@ -89,3 +89,43 @@ export default WalletTransfer;
 // };
 
 // export default WalletDashboard;
+
+
+
+//Was trying to create a more user friendly interface but not sure how I want to go about it yet.
+//So this is just a prototype😅
+// import React, { useState } from 'react';
+
+// const DynamicComponent = () => {
+//  const [userInput, setUserInput] = useState('');
+
+//  const handleChange = (e) => {
+//     setUserInput(e.target.value);
+//  };
+
+//  return (
+//     <div>
+//       <input type="text" value={userInput} onChange={handleChange} />
+//       <h2>Your Input: {userInput}</h2>
+//     </div>
+//  );
+// };
+
+// export default DynamicComponent;
+
+
+//import React from 'react';
+// import DynamicComponent from './DynamicComponent';
+
+// const ParentComponent = () => {
+//  const userName = 'John Doe';
+
+//  return (
+//     <div>
+//       <h1>Welcome, {userName}!</h1>
+//       <DynamicComponent userName={userName} />
+//     </div>
+//  );
+// };
+
+// export default ParentComponent;
