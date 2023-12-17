@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../Style/general.css';
 import '../Style/global.css';
 import { v4 as uuidv4 } from 'uuid';
+import Clipboard from 'clipboard';
 
 const Home = () => {
  const [referredPeople, setReferredPeople] = useState(0);
@@ -39,10 +40,14 @@ const Home = () => {
       console.error(error);
    }
   };
-
+  //main purpose here is that I want to be able to pull the userID that was referred so that it can be displayed on my dashboard
   const handleChange = (e) => {
    setNewUser(e.target.value);
    };
+
+   const handlerefer = () =>{
+      setReferralCode(uuidv4)
+   }
 
  const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,6 +55,21 @@ const Home = () => {
     referToFriend(newUser);
     setNewUser('');
  };
+
+ const handleCopyClick = (e) => {
+   const clipboard = new Clipboard('.clipboard-btn', {
+     text: function () {
+       return referralCode;
+     },
+   });
+   clipboard.on('success', function (e) {
+     e.clearSelection();
+     clipboard.destroy();
+   });
+   clipboard.on('error', function (e) {
+     clipboard.destroy();
+   });
+};
 
  return (
     <div>
@@ -62,10 +82,10 @@ const Home = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={newUser}
-          onChange={handleChange}
+          value={referralCode}
           style={{width:'20%',height:'1rem'}}
         />
+        <button type="button" className="clipboard-btn" onClick={handleCopyClick}>Copy</button>
         <button type="submit">Refer to a Friend</button>
       </form>
       <div>
