@@ -8,9 +8,12 @@ const Home = () => {
  const [referredPeople, setReferredPeople] = useState(0);
  const [accountBalance, setAccountBalance] = useState(0);
  const [referralCode, setReferralCode] = useState(uuidv4());
+ const [referredUsers, setReferredUsers] = useState([]);
+ const [newUser, setNewUser] = useState('');
  
- const referToFriend = () => {
+ const referToFriend = (username) => {
     setReferredPeople(referredPeople + 1);
+    setReferredUsers([...referredUsers, { id: uuidv4(), username }]);
  };
 
  const calculateLoyaltyRewards = () => {
@@ -36,10 +39,16 @@ const Home = () => {
       console.error(error);
    }
   };
-  
+
+  const handleChange = (e) => {
+   setNewUser(e.target.value);
+   };
+
  const handleSubmit = (e) => {
     e.preventDefault();
     validateReferralCode(referralCode);
+    referToFriend(newUser);
+    setNewUser('');
  };
 
  return (
@@ -53,12 +62,20 @@ const Home = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={referralCode}
-          onChange={(e) => setReferralCode(e.target.value)}
+          value={newUser}
+          onChange={handleChange}
           style={{width:'20%',height:'1rem'}}
         />
-        <button type="submit">Validate Referral Code</button>
+        <button type="submit">Refer to a Friend</button>
       </form>
+      <div>
+        <h3>Referred Users:</h3>
+        <ul>
+          {referredUsers.map((user) => (
+            <li key={user.id}>{user.username}</li>
+          ))}
+        </ul>
+      </div>
     </div>
  );
 };
