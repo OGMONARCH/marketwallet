@@ -56,6 +56,7 @@ const WalletTransfer = () => {
 };
 
 export default WalletTransfer;
+
 //Might end up moving this to the homepage tho.
 
 // import React, { useState, useEffect } from 'react';

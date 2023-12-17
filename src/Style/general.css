@@ -7,9 +7,9 @@ header{
     display: flex;
     background: black;
     height: 3rem;
-    width: 60%;
+    width: 80%;
     align-items: center;
-    margin: 1rem;
+    /* margin: 1rem; */
     padding: 20px;
     border: 1px solid #adff2f;
     border-radius: 20px;
@@ -33,4 +33,38 @@ header{
 
 .nav-section ul li a{
     text-decoration: none;
+}
+
+.main{
+    width: 95%;
+    height: 10rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.accountbalance{
+    display: flex;
+    align-items: center;
+    font-size: var( --font-size-xl);
+    font-weight: 700;
+    height: 5rem;
+    width: 50%;
+    padding: 30px;
+    background:  var(--color-gold-100);
+    margin: .5rem;
+    border-radius: 30px;
+}
+
+.numberreferral{
+    display: flex;
+    align-items: center;
+    font-size: var( --font-size-xl);
+    font-weight: 700;
+    height: 5rem;
+    width: 50%;
+    padding: 30px;
+    background:  var(--color-lightsteelblue);
+    margin: .5rem;
+    border-radius: 30px;
 }

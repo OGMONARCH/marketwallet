@@ -13,7 +13,7 @@ body {
     --font-size-3xs: 10px;
     --font-size-6xs: 7px;
     --font-size-xl: 20px;
-    --font-size-13xl: 32px;
+    --font-size-13xl: 30px;
 
       /* Colors */
   --color-white: #fff;
@@ -22,7 +22,7 @@ body {
   --color-lime-100: rgba(66, 255, 0, 0.5);
   --color-red-100: #fe0000;
   --color-red-200: rgba(255, 0, 0, 0.5);
-  --color-gold-100: #ffc700;
+  --color-gold-100: #ffd335ef;
   --color-gold-200: rgba(255, 199, 0, 0.21);
   --color-gray-100: #7b7b7b;
   --color-gray-200: rgba(0, 0, 0, 0.5);

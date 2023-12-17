@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "../Style/global.css";
 import '../Style/general.css';
 
+
 function Refer() {
     const [referredEmail, setReferredEmail] = useState('');
 
