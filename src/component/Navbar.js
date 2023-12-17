@@ -9,12 +9,8 @@ const Navbar = () => {
          <nav className='nav-section'>
             <ul>
                 <li><Link to={'/'}>Home</Link></li>
-                <li><Link to={'/refer'}>Refer</Link></li>
                 <li><Link to={'/transfer'}>Transfer</Link></li>
                 <li><Link to={'/transaction-history'}>Transaction History</Link></li>
-                <li><Link to={'/login'}>Login</Link></li>
-                <li><Link to={'/register'}>Register</Link></li>
-                <li><Link to={'/rewards'}>Rewards</Link></li>
             </ul>
         </nav>
     </header>       
