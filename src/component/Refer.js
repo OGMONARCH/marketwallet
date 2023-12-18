@@ -5,7 +5,7 @@ import '../Style/general.css';
 
 function Refer() {
     const [referredEmail, setReferredEmail] = useState('');
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {

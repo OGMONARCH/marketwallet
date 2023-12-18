@@ -6,15 +6,18 @@ import Navbar from './component/Navbar';
 import Home from './component/Home';
 import Transfer from './component/Transfer';
 import TransactionHistory from './component/TransactionHistory';
+import Voucher from './component/Voucher';
 
 function App() {
  return (
     <div className="App">
       <BrowserRouter>
-        <Home />
+        <Navbar />
         <Routes>
-          <Route path="/" element={<Navbar />} />
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/referralInfo" element={<ReferralInfo />} /> */}
           <Route path="/transfer" element={<Transfer />} />
+          <Route path="/voucher" element={<Voucher/>} />
           <Route path="/transaction-history" element={<TransactionHistory />} />
         </Routes>
       </BrowserRouter>
