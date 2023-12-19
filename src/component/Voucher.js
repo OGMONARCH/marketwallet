@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Toast } from 'react-toastify/dist/components';
 import axios from 'axios';
 
 const Voucher = () => {
-    const [voucherData, setVoucherData] = useState('');
+    const [voucherData, setVoucherData] = useState([]);
     const [amount, setAmount] = useState('');
     const [message, setMessage] = useState('');
 
     useEffect(() => {
         getVoucherData();
+    
     }, []);
 
     const getVoucherData = async () => {
         try {
             const response = await axios.get('http://localhost:3001/vouchers');
             setVoucherData(response.data);
+           
         } catch (error) {
             console.error('Error fetching voucher data:', error);
         }
@@ -75,7 +76,6 @@ const Voucher = () => {
                 <br />
                 <button type="submit">Redeem</button>
             </form>
-            <Toast />
         </div>
     );
 };

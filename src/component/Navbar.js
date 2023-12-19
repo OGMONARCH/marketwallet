@@ -11,7 +11,7 @@ const Navbar = () => {
                 <li><Link to={'/'}>Home</Link></li>
                 <li><Link to={'/referralInfo'}>Refer</Link></li>
                 <li><Link to={'/transfer'}>Transfer</Link></li>
-                <li><Link to={'/voucher'}/>Voucher</li>
+                <li><Link to={'/Voucher'}>Voucher</Link></li>
                 <li><Link to={'/transaction-history'}>Transaction History</Link></li>
             </ul>
         </nav>

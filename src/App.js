@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           {/* <Route path="/referralInfo" element={<ReferralInfo />} /> */}
           <Route path="/transfer" element={<Transfer />} />
-          <Route path="/voucher" element={<Voucher/>} />
+          <Route path="/Voucher" element={<Voucher/>} />
           <Route path="/transaction-history" element={<TransactionHistory />} />
         </Routes>
       </BrowserRouter>
