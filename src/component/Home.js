@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../Style/general.css';
 import '../Style/global.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = () => {
  const [referredPeople, setReferredPeople] = useState(0);
@@ -31,12 +33,12 @@ const Home = () => {
   
       if (response.ok) {
         console.log('Referral code is valid');
-        console.log(response)
+        toast.success(response)
       } else {
-        console.error('Referral code is invalid');
+        toast.error('Referral code is invalid');
       }
    } catch (error) {
-      console.error(error);
+      toast.error(error);
    }
   };
 
