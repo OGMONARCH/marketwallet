@@ -9,10 +9,8 @@ const Navbar = () => {
          <nav className='nav-section'>
             <ul>
                 <li><Link to={'/'}>Home</Link></li>
-                <li><Link to={'/referralInfo'}>Refer</Link></li>
-                <li><Link to={'/transfer'}>Transfer</Link></li>
+                {/* <li><Link to={'/referralInfo'}>ReferInfo</Link></li> */}
                 <li><Link to={'/Voucher'}>Voucher</Link></li>
-                <li><Link to={'/transaction-history'}>Transaction History</Link></li>
             </ul>
         </nav>
     </header>       

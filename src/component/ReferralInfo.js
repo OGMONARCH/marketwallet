@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import "./Style/global.css";
-import './Style/general.css';
+import "../Style/global.css";
+import '../Style/general.css';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './Navbar';
 
 function ReferralInfo() {
@@ -17,10 +19,10 @@ function ReferralInfo() {
                 const data = await response.json();
                 setReferralData(data);
             } else {
-                console.log('Failed to fetch referral data');
+                toast.log('Failed to fetch referral data');
             }
         } catch (error) {
-            console.error(error);
+            toast.error(error);
         }
     };
 
@@ -34,6 +36,7 @@ function ReferralInfo() {
             <h2>Referral Information</h2>
             <p>Number of referrals: {referralData.referralCount}</p>
             <p>Referred person: {referralData.referredEmail}</p>
+            <ToastContainer />
         </div>
     );
 }

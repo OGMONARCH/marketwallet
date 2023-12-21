@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import '../Style/general.css';
 import '../Style/global.css';
-// import { v4 as uuidv4 } from 'uuid';
-// import Clipboard from 'clipboard';
 
 const Home = () => {
  const [referredPeople, setReferredPeople] = useState(0);
  const [accountBalance, setAccountBalance] = useState(0);
  const [referralCode, setReferralCode] = useState('');
-//  const [referredUsers, setReferredUsers] = useState([]);
-//  const [newUser, setNewUser] = useState('');
- 
+ const [referredUsers, setReferredUsers] = useState([]);
+
+
  const referToFriend = () => {
     setReferredPeople(referredPeople + 1);
-   //  setReferredUsers([...referredUsers, { id: uuidv4(), username }]);
+    setReferredUsers([...referredUsers, ]);//{ id: e-mail, username }
  };
 
  const calculateLoyaltyRewards = () => {
@@ -34,6 +31,7 @@ const Home = () => {
   
       if (response.ok) {
         console.log('Referral code is valid');
+        console.log(response)
       } else {
         console.error('Referral code is invalid');
       }
@@ -47,9 +45,9 @@ const Home = () => {
 //    setNewUser(e.target.value);
 //    };
 
-   // const handlerefer = () =>{
-   //    setReferralCode(uuidv4)
-   // }
+   const handleRefer = () =>{
+      setReferralCode() //code
+   }
 
  const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,20 +56,6 @@ const Home = () => {
    //  setNewUser('');
  };
 
-//  const handleCopyClick = (e) => {
-//    const clipboard = new Clipboard('.clipboard-btn', {
-//      text: function () {
-//        return referralCode;
-//      },
-//    });
-//    clipboard.on('success', function (e) {
-//      e.clearSelection();
-//      clipboard.destroy();
-//    });
-//    clipboard.on('error', function (e) {
-//      clipboard.destroy();
-//    });
-// };
 
  return (
     <div>
@@ -79,17 +63,19 @@ const Home = () => {
         <span className='accountbalance'>Account Balance: ₦{accountBalance}</span>
         <span className='numberreferral'>Total Number of People Referred: {referredPeople}</span>
       </div>
-      <button onClick={calculateLoyaltyRewards}>Calculate Loyalty Rewards</button>
-      <button onClick={referToFriend}>Refer to a Friend</button>
+      <div style={{display: 'flex', gap: 10}}>
+      <button onClick={calculateLoyaltyRewards} style={{background: 'grey', padding: 15, margin: 10,border: 2, borderRadius: 15}}>Calculate Loyalty Rewards</button>
+      <button onClick={referToFriend} style={{background: 'grey', padding: 15, margin: 10,border: 2, borderRadius: 15}}>Refer to a Friend</button>
+      </div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={referralCode}
           onChange={(e) => setReferralCode(e.target.value)}
-          style={{width:'20%',height:'1rem'}}
+          style={{width:'20%',height:'1rem',padding: 15, margin: 10,border: 2, borderRadius: 15}}
         />
-        {/* <button type="button" className="clipboard-btn" onClick={handleCopyClick}>Copy</button> */}
-        <button type="submit">Validate Referral Code</button>
+        <br/>
+        <button type="submit" onClick={(e)=> handleRefer(e)} style={{background: 'grey', padding: 15, margin: 10,border: 2, borderRadius: 15}}>Validate Referral Code</button>
       </form>
       {/* <div>
         <h3>Referred Users:</h3>

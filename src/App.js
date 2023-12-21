@@ -4,8 +4,7 @@ import './Style/general.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './component/Navbar';
 import Home from './component/Home';
-import Transfer from './component/Transfer';
-import TransactionHistory from './component/TransactionHistory';
+// import ReferralInfo from './component/ReferralInfo';
 import Voucher from './component/Voucher';
 
 function App() {
@@ -15,10 +14,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/referralInfo" element={<ReferralInfo />} /> */}
-          <Route path="/transfer" element={<Transfer />} />
           <Route path="/Voucher" element={<Voucher/>} />
-          <Route path="/transaction-history" element={<TransactionHistory />} />
+          {/* <Route path="/referralInfo" element={<ReferralInfo />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
